@@ -63,7 +63,7 @@ Task added successfully.
 Feel free to fork this repository, make improvements, and submit a pull request. Contributions are always welcome!
 
 ## License
-This project is licensed under the **MIT License**.
+This project is licensed under the **[MIT License](LICENSE)**.
 
 ---
 ### Author
