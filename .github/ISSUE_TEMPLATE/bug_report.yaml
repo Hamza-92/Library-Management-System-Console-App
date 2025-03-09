@@ -1,0 +1,76 @@
+name: "🐞 Bug Report"
+description: "Report a bug or issue with the Library Management System."
+title: "[Bug]: "
+labels: ["bug"]
+assignees:
+  - Hamza-92
+body:
+  - type: markdown
+    attributes:
+      value: "### 🐛 Bug Report\nThank you for taking the time to report an issue! Please provide as much detail as possible."
+
+  - type: input
+    id: bug-title
+    attributes:
+      label: "Short Description"
+      description: "Summarize the bug in one sentence."
+      placeholder: "The application crashes when borrowing a book."
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: "Detailed Description"
+      description: "Provide a detailed explanation of the issue, including what you expected to happen and what actually happened."
+      placeholder: "When I try to borrow a book, the application crashes with an error..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: "Steps to Reproduce"
+      description: "List the steps to reproduce the bug."
+      placeholder: |
+        1. Open the application.
+        2. Try to borrow a book that is not available.
+        3. Observe the crash.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: "Expected Behavior"
+      description: "Describe what you expected to happen instead of the issue."
+      placeholder: "The system should display an error message instead of crashing."
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Logs & Screenshots"
+      description: "If applicable, add logs or screenshots to help explain the problem."
+      placeholder: "Paste error messages here or attach screenshots."
+
+  - type: input
+    id: environment
+    attributes:
+      label: "Environment (OS, .NET version, etc.)"
+      description: "Specify your OS and .NET version."
+      placeholder: "Windows 11, .NET 7.0"
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority"
+      description: "How urgent is this bug?"
+      options:
+        - "Low"
+        - "Medium"
+        - "High"
+        - "Critical"
+    validations:
+      required: true
