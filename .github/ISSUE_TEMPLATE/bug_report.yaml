@@ -1,20 +1,20 @@
 name: "🐞 Bug Report"
-description: "Report a bug or issue with the Library Management System."
+description: "Report an issue or unexpected behavior in the Library Management System."
 title: "[Bug]: "
 labels: ["bug"]
-assignees:
-  - Hamza-92
 body:
   - type: markdown
     attributes:
-      value: "### 🐛 Bug Report\nThank you for taking the time to report an issue! Please provide as much detail as possible."
+      value: |
+        ## 🐛 Bug Report
+        Thank you for taking the time to report an issue. Please fill out the details below to help us investigate the problem effectively.
 
   - type: input
     id: bug-title
     attributes:
       label: "Short Description"
-      description: "Summarize the bug in one sentence."
-      placeholder: "The application crashes when borrowing a book."
+      description: "Summarize the issue in a single sentence."
+      placeholder: "Example: The application crashes when borrowing a book."
     validations:
       required: true
 
@@ -22,8 +22,8 @@ body:
     id: bug-description
     attributes:
       label: "Detailed Description"
-      description: "Provide a detailed explanation of the issue, including what you expected to happen and what actually happened."
-      placeholder: "When I try to borrow a book, the application crashes with an error..."
+      description: "Provide a detailed explanation of the issue, including what you expected to happen versus what actually happened."
+      placeholder: "Describe the issue here..."
     validations:
       required: true
 
@@ -31,11 +31,11 @@ body:
     id: steps-to-reproduce
     attributes:
       label: "Steps to Reproduce"
-      description: "List the steps to reproduce the bug."
+      description: "List the steps to replicate this issue."
       placeholder: |
         1. Open the application.
-        2. Try to borrow a book that is not available.
-        3. Observe the crash.
+        2. Try to borrow a book that is already borrowed.
+        3. Observe the error.
     validations:
       required: true
 
@@ -43,30 +43,39 @@ body:
     id: expected-behavior
     attributes:
       label: "Expected Behavior"
-      description: "Describe what you expected to happen instead of the issue."
+      description: "Describe what should happen instead."
       placeholder: "The system should display an error message instead of crashing."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: "Actual Behavior"
+      description: "Describe what actually happens when the issue occurs."
+      placeholder: "The application crashes with an unhandled exception."
     validations:
       required: true
 
   - type: textarea
     id: logs
     attributes:
-      label: "Logs & Screenshots"
-      description: "If applicable, add logs or screenshots to help explain the problem."
-      placeholder: "Paste error messages here or attach screenshots."
+      label: "Logs & Screenshots (if applicable)"
+      description: "Include error messages, logs, or screenshots that could help identify the problem."
+      placeholder: "Paste error logs here..."
 
   - type: input
     id: environment
     attributes:
       label: "Environment (OS, .NET version, etc.)"
-      description: "Specify your OS and .NET version."
+      description: "Specify the operating system and .NET version you're using."
       placeholder: "Windows 11, .NET 7.0"
 
   - type: dropdown
     id: priority
     attributes:
-      label: "Priority"
-      description: "How urgent is this bug?"
+      label: "Priority Level"
+      description: "How critical is this issue?"
       options:
         - "Low"
         - "Medium"
