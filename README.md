@@ -1,43 +1,73 @@
-# Library Management System
+# Library Management System (Console App)
 
-A simple console-based **Library Management System** developed in **.NET C#**. This application allows users to manage books, borrow and return them, and keep track of the library collection.
+## 📌 Overview
+The **Library Management System** is a simple console-based application built using **C#** that allows users to manage a collection of books efficiently. It provides functionalities to add, view, borrow, return, and remove books from the library. This project is designed for learning purposes and can be extended to include more advanced features.
 
-## Features
-- **Add Books**: Add new books to the library with title and author.
-- **View Books**: Display all books with their status (Available/Borrowed).
-- **Borrow Books**: Users can borrow books from the library.
-- **Return Books**: Return borrowed books back to the library.
-- **Remove Books**: Remove books from the library collection.
-- **Error Handling**: Ensures smooth execution by handling invalid inputs.
-- **Formatted Output**: Provides a clean and structured display of books and actions.
+## 🚀 Features
+- 📚 **Add Book**: Add new books with a title and author.
+- 👀 **View Books**: List all available books with their status.
+- 🔄 **Borrow Book**: Mark a book as borrowed.
+- 🔄 **Return Book**: Mark a book as returned.
+- ❌ **Remove Book**: Delete a book from the library.
+- 🎭 **User-Friendly Interface**: Simple and easy-to-use console-based interface.
 
-## How to Run
-1. **Clone the Repository**:
+## 🛠️ Technologies Used
+- **Programming Language**: C#
+- **Development Environment**: .NET Console Application
+
+## 📂 Project Structure
+```
+📦 Library Management System
+├── 📄 Library Management System.sln  # Solution file
+├── 📂 Library Management System      # Main project folder
+│   ├── 📄 Program.cs                 # Main application file
+├── 📂 .github                        # GitHub-related files
+│   ├── 📄 ISSUE_TEMPLATE             # Issue template
+├── 📄 .gitattributes                 # Git attributes file
+├── 📄 .gitignore                     # Git ignore file
+├── 📄 CODE_OF_CONDUCT.md              # Code of Conduct
+├── 📄 CONTRIBUTING.md                 # Contribution guidelines
+├── 📄 LICENSE                         # MIT License
+├── 📄 README.md                       # Project documentation
+├── 📄 SECURITY.md                      # Security policies
+```
+
+## 🏗️ Installation & Usage
+
+### Prerequisites
+- Install **.NET SDK** from [Microsoft .NET](https://dotnet.microsoft.com/en-us/download)
+
+### Steps to Run
+1. **Clone the Repository**
    ```sh
    git clone https://github.com/Hamza-92/Library-Management-System-Console-App.git
+   cd "Library Management System"
    ```
-2. **Navigate to the Project Directory**:
-   ```sh
-   cd LibraryManagementSystem
-   ```
-3. **Compile and Run the Application**:
+2. **Run the Application**
    ```sh
    dotnet run
    ```
 
-## Usage
-- Run the application and follow the on-screen menu to perform actions.
-- Enter a valid book ID when borrowing, returning, or removing books.
-- To exit, select the "Exit" option.
+## 📌 How to Use
+1. Run the application.
+2. Choose an option from the menu:
+   - `1` to Add a Book
+   - `2` to View Books
+   - `3` to Borrow a Book
+   - `4` to Return a Book
+   - `5` to Remove a Book
+   - `6` to Exit
 
-## Technologies Used
-- **.NET C#**
-- **Console Application**
-- **Object-Oriented Programming (OOP)**
+## 🤝 Contributing
+We welcome contributions! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
 
-## License
-This project is licensed under the [MIT License](LICENSE). Feel free to use and modify it.
+## 🛡️ Security Policy
+For reporting vulnerabilities, please refer to our [SECURITY.md](SECURITY.md).
 
-## Author
-Developed by **Ameer Hamza**.
+## 📝 License
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+
+## 📬 Contact
+- **GitHub**: [Hamza-92](https://github.com/Hamza-92)
+- **Email**: ameerhamza92099@gmail.com
 
