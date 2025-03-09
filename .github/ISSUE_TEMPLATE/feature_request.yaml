@@ -1,0 +1,57 @@
+name: "✨ Feature Request"
+description: "Suggest a new feature or improvement for the Library Management System."
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ✨ Feature Request
+        Thank you for taking the time to propose a new feature! Please provide as much detail as possible to help us understand your request.
+
+  - type: input
+    id: feature-title
+    attributes:
+      label: "Feature Summary"
+      description: "Briefly describe the feature in a single sentence."
+      placeholder: "Example: Add support for exporting the book list to a CSV file."
+    validations:
+      required: true
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: "Detailed Description"
+      description: "Provide a clear and concise explanation of the feature. Include the problem it solves and why it is beneficial."
+      placeholder: "Describe the feature in detail..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: "Use Case / Benefits"
+      description: "Explain how this feature would be used and the benefits it provides."
+      placeholder: "This feature will allow users to export book lists for easy record-keeping."
+    validations:
+      required: true
+
+  - type: textarea
+    id: possible-implementation
+    attributes:
+      label: "Possible Implementation (Optional)"
+      description: "If you have any thoughts on how this could be implemented, describe them here."
+      placeholder: "We can use a CSV library to generate and export the book list."
+  
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority Level"
+      description: "How important is this feature?"
+      options:
+        - "Low"
+        - "Medium"
+        - "High"
+        - "Critical"
+    validations:
+      required: true
