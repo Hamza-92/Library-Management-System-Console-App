@@ -17,13 +17,19 @@ The **Library Management System** is a simple console-based application built us
 
 ## 📂 Project Structure
 ```
-📦 Library-Management-System-Console-App
-├── 📄 Program.cs       # Main application file
-├── 📄 Library.cs       # Library class handling book operations
-├── 📄 Book.cs          # Book class defining book properties
-├── 📄 README.md        # Project documentation
-├── 📄 LICENSE          # MIT License
-└── 📄 .gitignore       # Git ignore file
+📦 Library Management System
+├── 📄 Library Management System.sln  # Solution file
+├── 📂 Library Management System      # Main project folder
+│   ├── 📄 Program.cs                 # Main application file
+├── 📂 .github                        # GitHub-related files
+│   ├── 📄 ISSUE_TEMPLATE             # Issue template
+├── 📄 .gitattributes                 # Git attributes file
+├── 📄 .gitignore                     # Git ignore file
+├── 📄 CODE_OF_CONDUCT.md              # Code of Conduct
+├── 📄 CONTRIBUTING.md                 # Contribution guidelines
+├── 📄 LICENSE                         # MIT License
+├── 📄 README.md                       # Project documentation
+├── 📄 SECURITY.md                      # Security policies
 ```
 
 ## 🏗️ Installation & Usage
@@ -35,7 +41,7 @@ The **Library Management System** is a simple console-based application built us
 1. **Clone the Repository**
    ```sh
    git clone https://github.com/Hamza-92/Library-Management-System-Console-App.git
-   cd Library-Management-System-Console-App
+   cd "Library Management System"
    ```
 2. **Run the Application**
    ```sh
