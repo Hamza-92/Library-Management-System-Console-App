@@ -1,72 +1,67 @@
-# To-Do List Console Application
+# Library Management System (Console App)
 
-A simple **To-Do List** application built using **C# (.NET Console Application)** that allows users to manage their tasks efficiently. The app supports adding tasks, viewing tasks, marking tasks as done, and removing tasks.
+## 📌 Overview
+The **Library Management System** is a simple console-based application built using **C#** that allows users to manage a collection of books efficiently. It provides functionalities to add, view, borrow, return, and remove books from the library. This project is designed for learning purposes and can be extended to include more advanced features.
 
-## Features
-✅ Add a new task to the list  
-✅ View all tasks with their status (Done/Not Done)  
-✅ Mark a task as done  
-✅ Remove a task from the list  
-✅ Error handling for invalid inputs  
-✅ Colored text for better readability
+## 🚀 Features
+- 📚 **Add Book**: Add new books with a title and author.
+- 👀 **View Books**: List all available books with their status.
+- 🔄 **Borrow Book**: Mark a book as borrowed.
+- 🔄 **Return Book**: Mark a book as returned.
+- ❌ **Remove Book**: Delete a book from the library.
+- 🎭 **User-Friendly Interface**: Simple and easy-to-use console-based interface.
 
-## Installation & Usage
+## 🛠️ Technologies Used
+- **Programming Language**: C#
+- **Development Environment**: .NET Console Application
+
+## 📂 Project Structure
+```
+📦 Library-Management-System-Console-App
+├── 📄 Program.cs       # Main application file
+├── 📄 Library.cs       # Library class handling book operations
+├── 📄 Book.cs          # Book class defining book properties
+├── 📄 README.md        # Project documentation
+├── 📄 LICENSE          # MIT License
+└── 📄 .gitignore       # Git ignore file
+```
+
+## 🏗️ Installation & Usage
+
 ### Prerequisites
-- .NET SDK installed on your system
+- Install **.NET SDK** from [Microsoft .NET](https://dotnet.microsoft.com/en-us/download)
 
-### Clone the Repository
-```sh
-git clone https://github.com/your-username/todo-list-console-app.git
-cd todo-list-console-app
-```
+### Steps to Run
+1. **Clone the Repository**
+   ```sh
+   git clone https://github.com/Hamza-92/Library-Management-System-Console-App.git
+   cd Library-Management-System-Console-App
+   ```
+2. **Run the Application**
+   ```sh
+   dotnet run
+   ```
 
-### Compile and Run the Application
-```sh
-dotnet run
-```
-
-## How to Use
+## 📌 How to Use
 1. Run the application.
-2. Select an option from the menu:
-   - **1**: Add a task.
-   - **2**: View tasks.
-   - **3**: Mark a task as done.
-   - **4**: Remove a task.
-   - **5**: Exit the application.
-3. Follow the on-screen instructions.
+2. Choose an option from the menu:
+   - `1` to Add a Book
+   - `2` to View Books
+   - `3` to Borrow a Book
+   - `4` to Return a Book
+   - `5` to Remove a Book
+   - `6` to Exit
 
-## Example Output
-```
------------------------------------
-          TO-DO LIST APP           
------------------------------------
+## 🤝 Contributing
+We welcome contributions! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
 
-Options:
-[1] Add Task
-[2] View Tasks
-[3] Mark Task as Done
-[4] Remove Task
-[5] Exit
+## 🛡️ Security Policy
+For reporting vulnerabilities, please refer to our [SECURITY.md](SECURITY.md).
 
-Select an option: 1
-Enter task description: Complete project documentation
-Task added successfully.
-```
+## 📝 License
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
-## Color Legend
-- **Cyan**: App headers and titles
-- **Green**: Successful operations and completed tasks
-- **Yellow**: Pending tasks
-- **Red**: Errors and warnings
-
-## Contributing
-Feel free to fork this repository, make improvements, and submit a pull request. Contributions are always welcome!
-
-## License
-This project is licensed under the **[MIT License](LICENSE)**.
-
----
-### Author
-**Ameer Hamza**  
-GitHub: [Hamza-92](https://github.com/Hamza-92)
+## 📬 Contact
+- **GitHub**: [Hamza-92](https://github.com/Hamza-92)
+- **Email**: ameerhamza92099@gmail.com
 
