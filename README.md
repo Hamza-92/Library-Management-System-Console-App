@@ -83,7 +83,7 @@ Library Management System
    - `6` to Exit
 
 ## Contributing
-We welcome contributions! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
+We welcome contributions! Please read our [CONTRIBUTING.md](.github/CONTRIBUTING.md) to get started.
 
 ## Security Policy
 For reporting vulnerabilities, please refer to our [SECURITY.md](SECURITY.md).
