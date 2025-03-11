@@ -1,13 +1,13 @@
 # Contributing to Library Management System (Console App)
 
-We appreciate your interest in contributing to this project! To ensure a smooth collaboration, please follow these guidelines before making contributions.
+Thank you for your interest in contributing to this project! To ensure a smooth collaboration, please follow these guidelines before making contributions.
 
 ## 🛠 How to Contribute
 
 ### 1️⃣ Fork the Repository
 To contribute, you first need to create a personal copy of the repository.
 
-1. Go to the repository: [Library Management System (Console App)](https://github.com/Hamza-92/Library-Management-System-Console-App).
+1. Navigate to the repository: [Library Management System (Console App)](https://github.com/Hamza-92/Library-Management-System-Console-App).
 2. Click the **Fork** button at the top-right to create a copy under your GitHub account.
 3. Clone the forked repository to your local machine.
 
@@ -129,4 +129,3 @@ If you need assistance:
 - Contact the maintainer at **ameerhamza92099@gmail.com**.
 
 Thank you for contributing! 🚀
-

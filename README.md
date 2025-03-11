@@ -41,9 +41,12 @@ The **Library Management System** is a simple console-based application built us
 1. **Clone the Repository**
    ```sh
    git clone https://github.com/Hamza-92/Library-Management-System-Console-App.git
+   ```
+1. **Navigate to the project directory**
+   ```sh
    cd "Library Management System"
    ```
-2. **Run the Application**
+3. **Run the Application**
    ```sh
    dotnet run
    ```
