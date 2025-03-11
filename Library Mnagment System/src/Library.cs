@@ -3,134 +3,157 @@ using System.Collections.Generic;
 
 class Library
 {
-    private List<Book> books = new List<Book>();
-    private int bookCounter = 1;
+    private List<Book> books;
+    private int nextId;
+
+    public Library()
+    {
+        books = StorageManager.LoadBooks();
+        nextId = books.Count > 0 ? books[^1].Id + 1 : 1;
+    }
 
     public void AddBook()
     {
-        try
-        {
-            Console.Write("\nEnter book title: ");
-            string title = Console.ReadLine().Trim();
-            Console.Write("Enter author name: ");
-            string author = Console.ReadLine().Trim();
+        Console.Clear();
+        Console.WriteLine("=== Add New Book ===");
 
-            if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(author))
-            {
-                Console.WriteLine("Error: Title and Author cannot be empty!\n");
-                return;
-            }
+        string title = UserInputHelper.GetNonEmptyString("Enter Book Title: ");
+        string author = UserInputHelper.GetNonEmptyString("Enter Author: ");
+        int year = UserInputHelper.GetValidYear("Enter Publish Year: ");
 
-            books.Add(new Book { Id = bookCounter++, Title = title, Author = author });
-            Console.WriteLine("\nBook added successfully!\n");
-        }
-        catch (Exception ex)
+        if (books.Exists(b => b.Title.Equals(title, StringComparison.OrdinalIgnoreCase) &&
+                              b.Author.Equals(author, StringComparison.OrdinalIgnoreCase)))
         {
-            Console.WriteLine($"Error: {ex.Message}\n");
+            UserInputHelper.DisplayError("This book already exists in the library.");
+            return;
         }
+
+        books.Add(new Book { Id = nextId++, Title = title, Author = author, PublishYear = year, IsBorrowed = false });
+        StorageManager.SaveBooks(books);
+
+        UserInputHelper.DisplaySuccess("Book added successfully!");
     }
 
     public void ViewBooks()
     {
-        Console.WriteLine("\n=== Library Books ===");
-        if (books.Count == 0)
-        {
-            Console.WriteLine("No books available in the library.\n");
-            return;
-        }
-        Console.WriteLine("ID   | Title                         | Author             | Status");
-        Console.WriteLine("------------------------------------------------------------");
-        foreach (var book in books)
-        {
-            Console.WriteLine($"{book.Id,-4} | {book.Title,-30} | {book.Author,-20} | {(book.IsBorrowed ? "Borrowed" : "Available")}");
-        }
-        Console.WriteLine();
+        Console.Clear();
+        Console.WriteLine("=== Library Books ===");
+        DisplayBooks(books);
     }
 
     public void BorrowBook()
     {
-        try
+        Console.Clear();
+        Console.WriteLine("=== Borrow a Book ===");
+        List<Book> availableBooks = books.FindAll(b => !b.IsBorrowed);
+
+        if (availableBooks.Count == 0)
         {
-            Console.Write("\nEnter book ID to borrow: ");
-            if (int.TryParse(Console.ReadLine(), out int bookId))
-            {
-                var book = books.Find(b => b.Id == bookId);
-                if (book != null && !book.IsBorrowed)
-                {
-                    book.IsBorrowed = true;
-                    Console.WriteLine("\nBook borrowed successfully!\n");
-                }
-                else
-                {
-                    Console.WriteLine("\nError: Invalid ID or book already borrowed.\n");
-                }
-            }
-            else
-            {
-                Console.WriteLine("\nError: Invalid input! Please enter a valid book ID.\n");
-            }
+            UserInputHelper.DisplayError("No available books to borrow.");
+            return;
         }
-        catch (Exception ex)
+
+        DisplayBooks(availableBooks);
+
+        int id = UserInputHelper.GetValidInt("Enter Book ID to Borrow: ");
+        Book book = books.Find(b => b.Id == id && !b.IsBorrowed);
+
+        if (book != null)
         {
-            Console.WriteLine($"Error: {ex.Message}\n");
+            book.IsBorrowed = true;
+            StorageManager.SaveBooks(books);
+            UserInputHelper.DisplaySuccess($"Book '{book.Title}' borrowed successfully!");
+        }
+        else
+        {
+            UserInputHelper.DisplayError("Invalid book ID or book is already borrowed.");
         }
     }
 
     public void ReturnBook()
     {
-        try
+        Console.Clear();
+        Console.WriteLine("=== Return a Book ===");
+        List<Book> borrowedBooks = books.FindAll(b => b.IsBorrowed);
+
+        if (borrowedBooks.Count == 0)
         {
-            Console.Write("\nEnter book ID to return: ");
-            if (int.TryParse(Console.ReadLine(), out int bookId))
-            {
-                var book = books.Find(b => b.Id == bookId);
-                if (book != null && book.IsBorrowed)
-                {
-                    book.IsBorrowed = false;
-                    Console.WriteLine("\nBook returned successfully!\n");
-                }
-                else
-                {
-                    Console.WriteLine("\nError: Invalid ID or book was not borrowed.\n");
-                }
-            }
-            else
-            {
-                Console.WriteLine("\nError: Invalid input! Please enter a valid book ID.\n");
-            }
+            UserInputHelper.DisplayError("No books are currently borrowed.");
+            return;
         }
-        catch (Exception ex)
+
+        DisplayBooks(borrowedBooks);
+
+        int id = UserInputHelper.GetValidInt("Enter Book ID to Return: ");
+        Book book = books.Find(b => b.Id == id && b.IsBorrowed);
+
+        if (book != null)
         {
-            Console.WriteLine($"Error: {ex.Message}\n");
+            book.IsBorrowed = false;
+            StorageManager.SaveBooks(books);
+            UserInputHelper.DisplaySuccess($"Book '{book.Title}' returned successfully!");
+        }
+        else
+        {
+            UserInputHelper.DisplayError("Invalid book ID or the book was not borrowed.");
         }
     }
 
     public void RemoveBook()
     {
-        try
+        Console.Clear();
+        Console.WriteLine("=== Remove a Book ===");
+
+        if (books.Count == 0)
         {
-            Console.Write("\nEnter book ID to remove: ");
-            if (int.TryParse(Console.ReadLine(), out int bookId))
+            UserInputHelper.DisplayError("No books available to remove.");
+            return;
+        }
+
+        DisplayBooks(books);
+
+        int id = UserInputHelper.GetValidInt("Enter Book ID to Remove: ");
+        Book book = books.Find(b => b.Id == id);
+
+        if (book != null)
+        {
+            Console.Write($"Are you sure you want to remove '{book.Title}'? (y/n): ");
+            string confirmation = Console.ReadLine()?.Trim().ToLower();
+
+            if (confirmation == "y")
             {
-                var book = books.Find(b => b.Id == bookId);
-                if (book != null)
-                {
-                    books.Remove(book);
-                    Console.WriteLine("\nBook removed successfully!\n");
-                }
-                else
-                {
-                    Console.WriteLine("\nError: Book not found.\n");
-                }
+                books.Remove(book);
+                StorageManager.SaveBooks(books);
+                UserInputHelper.DisplaySuccess("Book removed successfully!");
             }
             else
             {
-                Console.WriteLine("\nError: Invalid input! Please enter a valid book ID.\n");
+                UserInputHelper.DisplayInfo("Book removal canceled.");
             }
         }
-        catch (Exception ex)
+        else
         {
-            Console.WriteLine($"Error: {ex.Message}\n");
+            UserInputHelper.DisplayError("Book not found.");
         }
+    }
+
+    private void DisplayBooks(List<Book> bookList)
+    {
+        if (bookList.Count == 0)
+        {
+            Console.WriteLine("No books found.");
+            return;
+        }
+
+        Console.WriteLine("====================================================================================");
+        Console.WriteLine("| ID  | Title                          | Author                | Year   | Status     |");
+        Console.WriteLine("====================================================================================");
+
+        foreach (var book in bookList)
+        {
+            Console.WriteLine($"| {book.Id,-3} | {book.Title,-30} | {book.Author,-20} | {book.PublishYear,-6} | {(book.IsBorrowed ? "Borrowed" : "Available"),-10} |");
+        }
+
+        Console.WriteLine("====================================================================================");
     }
 }

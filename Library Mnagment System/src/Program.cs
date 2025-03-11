@@ -1,64 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-
-
-
-class Program
+﻿class Program
 {
     static void Main()
     {
         Library library = new Library();
+
         while (true)
         {
-            Console.WriteLine("\n========================");
-            Console.WriteLine(" Library Management System ");
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("========================");
+            Console.WriteLine("   Library Management   ");
+            Console.WriteLine("========================");
+            Console.ResetColor();
             Console.WriteLine("1. Add Book");
             Console.WriteLine("2. View Books");
             Console.WriteLine("3. Borrow Book");
             Console.WriteLine("4. Return Book");
             Console.WriteLine("5. Remove Book");
             Console.WriteLine("6. Exit");
-            Console.Write("Enter your choice: ");
+            Console.Write("Choose an option: ");
 
-            try
+            switch (Console.ReadLine()?.Trim())
             {
-                if (int.TryParse(Console.ReadLine(), out int choice))
-                {
-                    switch (choice)
-                    {
-                        case 1:
-                            library.AddBook();
-                            break;
-                        case 2:
-                            library.ViewBooks();
-                            break;
-                        case 3:
-                            library.BorrowBook();
-                            break;
-                        case 4:
-                            library.ReturnBook();
-                            break;
-                        case 5:
-                            library.RemoveBook();
-                            break;
-                        case 6:
-                            Console.WriteLine("\nExiting the program...\n");
-                            return;
-                        default:
-                            Console.WriteLine("\nError: Invalid choice! Please select a valid option.\n");
-                            break;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("\nError: Invalid input! Please enter a number.\n");
-                }
+                case "1": library.AddBook(); break;
+                case "2": library.ViewBooks(); break;
+                case "3": library.BorrowBook(); break;
+                case "4": library.ReturnBook(); break;
+                case "5": library.RemoveBook(); break;
+                case "6": return;
+                default:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid choice. Please try again.");
+                    Console.ResetColor();
+                    break;
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}\n");
-            }
+
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
         }
     }
 }
