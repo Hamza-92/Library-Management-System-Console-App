@@ -1,8 +1,4 @@
-<div align="center">
-
 # Library Management System (Console App)
-
-</div>
 
 <div align="center">
 
@@ -14,20 +10,52 @@
 
 </div>
 
-## Overview
-The **Library Management System** is a simple console-based application built using **C#** that allows users to manage a collection of books efficiently. It provides functionalities to add, view, borrow, return, and remove books from the library. This project is designed for learning purposes and can be extended to include more advanced features.
+---
 
-## Features
-- **Add Book**: Add new books with a title and author.
-- **View Books**: List all available books with their status.
-- **Borrow Book**: Mark a book as borrowed.
-- **Return Book**: Mark a book as returned.
-- **Remove Book**: Delete a book from the library.
-- **User-Friendly Interface**: Simple and easy-to-use console-based interface.
+## Table of Contents
 
-## Technologies Used
-- **Programming Language**: C#
-- **Development Environment**: .NET Console Application
+1. [Overview](#overview)  
+2. [Features](#features)  
+3. [Technologies Used](#technologies-used)  
+4. [Project Structure](#project-structure)  
+5. [Installation & Usage](#installation--usage)  
+   - [Prerequisites](#prerequisites)  
+   - [Steps to Run](#steps-to-run)  
+6. [How to Use](#how-to-use)  
+7. [Contributing](#contributing)  
+8. [Security Policy](#security-policy)  
+9. [License](#license)  
+10. [Contact](#contact)  
+
+---
+
+## Overview  
+
+The **Library Management System** is a simple yet effective console-based application developed in **C#**. This project provides users with the ability to manage a library of books, including adding, viewing, borrowing, returning, and removing books. The system implements **persistent storage** using JSON, ensuring that data is saved even after the application is closed.  
+
+This project is designed for learning purposes and can be extended with more advanced functionalities.  
+
+---
+
+## Features  
+
+- **Persistent Storage**: Book data is saved and loaded from a JSON file.  
+- **Add Book**: Store new books with a title, author, and publication year.  
+- **View Books**: Display all books with their availability status.  
+- **Borrow Book**: Mark a book as borrowed.  
+- **Return Book**: Mark a book as returned.  
+- **Remove Book**: Delete a book from the library with a confirmation prompt.  
+- **User-Friendly Console UI**: A well-structured and formatted interface for ease of use.  
+
+---
+
+## Technologies Used  
+
+- **Programming Language**: C#  
+- **Development Environment**: .NET Console Application  
+- **Data Storage**: JSON (using `Newtonsoft.Json`)  
+
+---
 
 ## Project Structure
 ```
@@ -38,6 +66,8 @@ Library Management System
 │   │   ├── Program.cs             # Main application file
 │   │   ├── Book.cs                # Book class file
 │   │   ├── Library.cs             # Library class file
+│   │   ├── StorageManager.cs      # Storage canager class file
+│   │   ├── UserInputHelper.cs     # User input helper class file
 ├── .github                        # GitHub-related files
 │   ├── ISSUE_TEMPLATE             # Issue template
 │   ├── CODE_OF_CONDUCT.md         # Code of Conduct
@@ -48,6 +78,8 @@ Library Management System
 ├── README.md                      # Project documentation
 ├── SECURITY.md                    # Security policies
 ```
+
+---
 
 ## Installation & Usage
 
@@ -72,24 +104,58 @@ Library Management System
    dotnet run
    ```
 
+---
+
 ## How to Use
-1. Run the application.
-2. Choose an option from the menu:
-   - `1` to Add a Book
-   - `2` to View Books
-   - `3` to Borrow a Book
-   - `4` to Return a Book
-   - `5` to Remove a Book
-   - `6` to Exit
+### Main Menu
+After running the application, you will see the following menu:
+```
+=========================
+Library Management System
+=========================
+1. Add a Book
+2. View Books
+3. Borrow a Book
+4. Return a Book
+5. Remove a Book
+6. Exit
+Enter your choice:
+```
+### Operations
+#### Add a Book
+- Select option 1 and enter the title, author, and publication year.
+- The book will be added and stored in the library.
+#### View Books
+- Select option 2 to list all books along with their status (Available/Borrowed).
+#### Borrow a Book
+- Select option 3 and choose a book from the displayed list.
+- If available, it will be marked as Borrowed.
+#### Return a Book
+- Select option 4 and choose a book to return.
+- The book status will change back to Available.
+#### Remove a Book
+- Select option 5, and the book list will be displayed.
+- Choose the book you want to delete.
+- A confirmation prompt will appear before deletion.
+#### Exit
+- Select option 6 to close the application.
+
+---
 
 ## Contributing
 We welcome contributions! Please read our [CONTRIBUTING.md](.github/CONTRIBUTING.md) to get started.
 
+---
+
 ## Security Policy
 For reporting vulnerabilities, please refer to our [SECURITY.md](SECURITY.md).
 
+---
+
 ## License
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+
+---
 
 ## Contact
 - **GitHub**: [Hamza-92](https://github.com/Hamza-92)
