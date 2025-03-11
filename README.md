@@ -1,4 +1,18 @@
+<div align="center">
+
 # Library Management System (Console App)
+
+</div>
+
+<div align="center">
+
+![GitHub issues](https://img.shields.io/github/issues/Hamza-92/Library-Management-System-Console-App)
+![GitHub forks](https://img.shields.io/github/forks/Hamza-92/Library-Management-System-Console-App)
+![GitHub stars](https://img.shields.io/github/stars/Hamza-92/Library-Management-System-Console-App)
+![GitHub license](https://img.shields.io/github/license/Hamza-92/Library-Management-System-Console-App)
+![GitHub last commit](https://img.shields.io/github/last-commit/Hamza-92/Library-Management-System-Console-App)
+
+</div>
 
 ## Overview
 The **Library Management System** is a simple console-based application built using **C#** that allows users to manage a collection of books efficiently. It provides functionalities to add, view, borrow, return, and remove books from the library. This project is designed for learning purposes and can be extended to include more advanced features.
