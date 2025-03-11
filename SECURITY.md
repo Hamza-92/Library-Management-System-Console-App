@@ -1,10 +1,10 @@
 # Security Policy
 
-## 📌 Reporting a Vulnerability
+## Reporting a Vulnerability
 
 We take security vulnerabilities seriously and appreciate your efforts to responsibly disclose them. If you discover a security issue in the **Library Management System (Console App)**, please follow these steps:
 
-### 🔒 Responsible Disclosure Process:
+### Responsible Disclosure Process:
 1. **Do not create a public issue.** Instead, report the vulnerability privately.
 2. Email the details to **ameerhamza92099@gmail.com** with the subject: `[SECURITY] Vulnerability Report - Library Management System`.
 3. Include a **detailed description** of the issue:
@@ -16,7 +16,7 @@ We take security vulnerabilities seriously and appreciate your efforts to respon
 
 ---
 
-## 🚀 Supported Versions
+## Supported Versions
 We actively maintain and patch security issues in the following versions:
 
 | Version | Status        | Security Fixes |
@@ -28,7 +28,7 @@ If you're using an older version, we highly recommend upgrading to the latest re
 
 ---
 
-## 🔐 Security Best Practices
+## Security Best Practices
 We encourage contributors and users to follow best practices to ensure application security:
 - **Keep dependencies up to date** to prevent vulnerabilities.
 - **Use secure coding practices** when contributing code.
@@ -37,4 +37,4 @@ We encourage contributors and users to follow best practices to ensure applicati
 
 ---
 
-Thank you for helping keep the **Library Management System (Console App)** secure! 🚀
+Thank you for helping keep the **Library Management System (Console App)** secure!
